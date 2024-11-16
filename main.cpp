@@ -1,6 +1,7 @@
 #include <pico/stdlib.h>
 #include <hardware/sync.h>
 #include <pico/multicore.h>
+#include <hardware/clocks.h>
 
 #include <array>
 #include <cstdio>
