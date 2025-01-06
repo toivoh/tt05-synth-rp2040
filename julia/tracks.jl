@@ -260,10 +260,10 @@ function parse_track(nsteps::Int, step_size::Int, tokens::Vector{Token}, note_of
 end
 
 function next_event!(s::State, max_step::Int = typemax(Int))
-	delta_t = minimum(wait_time_of(track) for track in values(state.tracks))
+	delta_t = minimum(wait_time_of(track) for track in values(s.tracks))
 	delta_t = min(delta_t, max_step)
 	finished = true
-	for track in values(state.tracks)
+	for track in values(s.tracks)
 		finished &= advance!(track, delta_t)
 	end
 	return finished, delta_t
